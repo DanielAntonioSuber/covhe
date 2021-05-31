@@ -1,0 +1,29 @@
+
+
+aside {
+  float: right;
+  width: 65%;
+  margin: 25px;
+}
+.foto1 {
+  float: right;
+  width: 500px;
+}
+.foto2 {
+  float: center;
+  width: 350px;
+}
+.foto3 {
+  float: center;
+  width: 400px;
+}
+.foto4 {
+  float: right;
+  width: 350px;
+  height: 250px;
+}
+.foto5 {
+  float: right;
+  width: 350px;
+  height: 280px;
+}

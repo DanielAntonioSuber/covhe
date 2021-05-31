@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500mm" height="500mm" version="1.1" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="linearGradient3126">
+   <stop stop-color="#0f0" offset="0"/>
+   <stop stop-color="#00a159" offset=".50278"/>
+   <stop stop-color="#23b380" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient3128" x1="50" x2="450" y1="250" y2="252.22" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient3126"/>
+  <linearGradient id="linearGradient962" x1="2" x2="498" y1="250" y2="250" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient3126"/>
+ </defs>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g>
+  <g>
+   <ellipse cx="250" cy="250" rx="191.61" ry="191.61" fill-opacity="0" stroke="url(#linearGradient3128)" stroke-width="16.772"/>
+   <ellipse cx="250" cy="77" rx="68.796" ry="68.796" fill="#238b80" stroke="#238b80" stroke-width="12.409"/>
+   <ellipse cx="250" cy="423" rx="68.796" ry="68.796" fill="#00bf46" stroke="#00bf46" stroke-width="12.409"/>
+  </g>
+  <text x="98.953857" y="276.84848" font-family="'Cascadia Code'" font-size="50.8px" stroke-width=".26458" style="line-height:1.05" xml:space="preserve"><tspan x="98.953857" y="276.84848" font-family="'Cascadia Code'" font-size="50.8px" stroke-width=".26458"/></text>
+  <g fill="url(#linearGradient962)" stroke="url(#linearGradient962)">
+   <g stroke-width="12.409">
+    <ellipse cx="423" cy="250" rx="68.796" ry="68.796"/>
+    <ellipse cx="77" cy="250" rx="68.796" ry="68.796"/>
+   </g>
+   <rect x="138.42" y="218.42" width="223.17" height="63.169" stroke-width="16.831"/>
+  </g>
+  <text transform="scale(.96428 1.037)" x="89.43248" y="263.26926" fill="#ffffff" font-family="'Cascadia Code'" font-size="64.003px" stroke-width="0" style="line-height:1.25" xml:space="preserve"><tspan x="89.43248" y="263.26926" fill="#ffffff" font-family="'Cascadia Code'" font-size="64.397px" stroke-width="0">{DevSoft}</tspan></text>
+ </g>
+</svg>

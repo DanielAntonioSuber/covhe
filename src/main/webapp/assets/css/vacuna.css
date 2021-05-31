@@ -1,0 +1,26 @@
+body {
+  background: white;
+  text-align: justify;
+}
+#container {
+  width: 100%;
+  margin: 0px auto;
+  border: 0px solid black;
+}
+header {
+  background: red;
+  border-bottom: 3px black;
+}
+aside {
+  float: right;
+  width: 65%;
+}
+.foto1 {
+  float: left;
+  width: 400px;
+}
+.foto2 {
+  float: right;
+  float: center;
+  width: 400px;
+}
