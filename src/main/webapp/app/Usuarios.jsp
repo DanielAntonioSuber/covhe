@@ -32,7 +32,7 @@
         <link rel="stylesheet" href="../assets/css/normalize.css">
         <link rel="stylesheet" href="../assets/css/covhe.css">
         <link rel="stylesheet" href="../assets/css/ajustes.css">
-
+        <link rel="stylesheet" href="../assets/css/tablas.css"/>
         <title>CovHe - Opciones</title>
     </head>
 
@@ -117,51 +117,56 @@
         <!-- En este coso ponen todo lo que va a hacer -->
         <main class="main" style="display: block">
 
-            <h1 align="center">Administrar Usuarios</h1>
             <br><br>
-            <table border="1" width="1000" align="center">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Usuario</th>
-                        <th>Correo</th>
-                        <th>Contraseña</th>
-                        <th>Nivel</th>
-                        <th>Fecha de creación</th>
-                    </tr>
-                </thead>
+            <div class="tbl-header">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Usuario</th>
+                            <th>Correo</th>
+                            <th>Contraseña</th>
+                            <th>Nivel</th>
+                            <th>Fecha de creación</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="tbl-content">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tbody>
+                        <%
+                            Consultas consulta = new Consultas();
 
-                <tbody>
-                    <%
-                        Consultas consulta = new Consultas();
+                            ArrayList<Usuario> usuarios = consulta.getUsuarios();
 
-                        ArrayList<Usuario> usuarios = consulta.getUsuarios();
+                            for (Usuario nUsuario : usuarios) {
+                        %>
 
-                        for (Usuario nUsuario : usuarios) {
-                    %>
-
-                    <tr>
-                        <td><%= nUsuario.getId()%></td>  
-                        <td><%= nUsuario.getNombre()%></td>  
-                        <td><%= nUsuario.getApellidos()%></td>  
-                        <td><%= nUsuario.getNomUsuario()%></td>  
-                        <td><%= nUsuario.getCorreo()%></td>  
-                        <td><%= nUsuario.getContrasennia()%></td>  
-                        <td><%= nUsuario.getNivel()%></td>  
-                        <td><%= nUsuario.getFecha() %></td>  
-                        <td>
-                            <a href="Usuarios.jsp?eliminar=<%= nUsuario.getId()%>">
-                                <ion-icon name="trash-outline"></ion-icon>
-                            </a>
-                        </td> 
-                    </tr>
-                    <%
-                        }
-                    %>
-                </tbody>
-            </table>
+                        <tr>
+                            <td><%= nUsuario.getId()%></td>  
+                            <td><%= nUsuario.getNombre()%></td>  
+                            <td><%= nUsuario.getApellidos()%></td>  
+                            <td><%= nUsuario.getNomUsuario()%></td>  
+                            <td><%= nUsuario.getCorreo()%></td>  
+                            <td><%= nUsuario.getContrasennia()%></td>  
+                            <td><%= nUsuario.getNivel()%></td>  
+                            <td><%= nUsuario.getFecha()%></td>  
+                            <td>
+                                <a href="Usuarios.jsp?eliminar=<%= nUsuario.getId()%>">
+                                    <ion-icon name="trash-outline" class="trash" ></ion-icon>
+                                </a>
+                            </td> 
+                        </tr>
+                        <%
+                            }
+                        %>
+                    </tbody>
+                </table>
+            </div>
         </main>
         <!-- ===== IONICONS ===== -->
         <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>

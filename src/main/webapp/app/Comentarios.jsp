@@ -34,7 +34,7 @@
         <link rel="stylesheet" href="../assets/css/normalize.css">
         <link rel="stylesheet" href="../assets/css/covhe.css">
         <link rel="stylesheet" href="../assets/css/ajustes.css">
-
+        <link rel="stylesheet" href="../assets/css/tablas.css"/>
         <title>CovHe - Opciones</title>
     </head>
 
@@ -113,45 +113,50 @@
             </nav>
         </div>
         <header class="header">
-            <h1>Administrar Publicaciones</h1>
+            <h1>Administrar Comentarios</h1>
         </header>
 
         <!-- En este coso ponen todo lo que va a hacer -->
         <main class="main" style="display: block">
 
-            <h1 align="center">Administrar Foro</h1>
             <br><br>
-            <table border="1" width="1000" align="center">
-                <caption>Lista de comentarios</caption>
-                <thead>
-                    <tr> 
-                        <th>Id</th>
-                        <th>Usuario</th>
-                        <th>Contenido</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <%
-                        ArrayList<Comentario> comentarios = new Consultas().comentarios();
+            <div class="tbl-header">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <thead>
+                        <tr> 
+                            <th>Id</th>
+                            <th>Usuario</th>
+                            <th>Contenido</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="tbl-content">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tbody>
+                        <%
+                            ArrayList<Comentario> comentarios = new Consultas().comentarios();
 
-                        for (Comentario comentario : comentarios) {
-                    %>
-                    <tr>
-                        <td><%= comentario.getId()%></td>  
-                        <td><%= comentario.getUsuario()%></td>  
-                        <td><%= comentario.getContenido()%></td>  
+                            for (Comentario comentario : comentarios) {
+                        %>
+                        <tr>
+                            <td><%= comentario.getId()%></td>  
+                            <td><%= comentario.getUsuario()%></td>  
+                            <td><%= comentario.getContenido()%></td>  
 
-                        <td>
-                            <a href="Comentarios.jsp?eliminar=<%=comentario.getId()%>">
-                                <ion-icon name="trash-outline"></ion-icon>
-                            </a>
-                        </td> 
-                    </tr>
-                    <%
-                        }
-                    %>
-                </tbody>
-            </table>
+                            <td>
+                                <a href="Comentarios.jsp?eliminar=<%=comentario.getId()%>">
+                                    <ion-icon name="trash-outline" class="trash"></ion-icon>
+                                </a>
+                            </td> 
+                        </tr>
+                        <%
+                            }
+                        %>
+                    </tbody>
+                </table>
+            </div>
         </main>
         <!-- ===== IONICONS ===== -->
         <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>

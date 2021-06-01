@@ -20,7 +20,7 @@
         if (eliminar != null && usuario.getNivel() == 1) {
             Bajas bajas = new Bajas();
             boolean seElimino = bajas.elminarPublicacion(Integer.parseInt(eliminar));
-            if(seElimino) {
+            if (seElimino) {
                 bajas.eliminarComentarios(Integer.parseInt(eliminar));
             }
             response.sendRedirect("Publicaciones.jsp");
@@ -37,7 +37,7 @@
         <link rel="stylesheet" href="../assets/css/normalize.css">
         <link rel="stylesheet" href="../assets/css/covhe.css">
         <link rel="stylesheet" href="../assets/css/ajustes.css">
-
+        <link rel="stylesheet" href="../assets/css/tablas.css"/>
         <title>CovHe - Opciones</title>
     </head>
 
@@ -122,41 +122,45 @@
         <!-- En este coso ponen todo lo que va a hacer -->
         <main class="main" style="display: block">
 
-            <h1 align="center">Administrar Foro</h1>
             <br><br>
-            <table border="1" width="1000" align="center">
-                
+            <div class="tbl-header">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Titulo</th>
+                            <th>Contenido</th>
+                            <th></th>
+                        </tr>
+                    </thead>
 
-                <thead>
-                        <th colspan="10" aling = "center">Lista de Publicaciones</th>
-                    <tr>
-                        <th>Id</th>
-                        <th>Titulo</th>
-                        <th>Contenido</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <%
+                </table>
+            </div>
+            <div class="tbl-content">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tbody>
+                        <%
 
-                        ArrayList<Publicacion> publicaciones = new Consultas().publicaciones();
-                        for (Publicacion publicacion : publicaciones) {
-                    %>
-                    <tr>
-                        <td><%= publicacion.getId()%></td>  
-                        <td><%=  publicacion.getTitulo()%></td>  
-                        <td><%= publicacion.getContenido()%></td>  
+                            ArrayList<Publicacion> publicaciones = new Consultas().publicaciones();
+                            for (Publicacion publicacion : publicaciones) {
+                        %>
+                        <tr>
+                            <td><%= publicacion.getId()%></td>  
+                            <td><%=  publicacion.getTitulo()%></td>  
+                            <td><%= publicacion.getContenido()%></td>  
 
-                        <td>
-                            <a href="Publicaciones.jsp?eliminar=<%=publicacion.getId()%>">
-                                <ion-icon name="trash-outline"></ion-icon>
-                            </a>
-                        </td> 
-                    </tr>
-                    <%
-                        }
-                    %>
-                </tbody>
-            </table>
+                            <td>
+                                <a href="Publicaciones.jsp?eliminar=<%=publicacion.getId()%>">
+                                    <ion-icon name="trash-outline" class="trash"></ion-icon>
+                                </a>
+                            </td> 
+                        </tr>
+                        <%
+                            }
+                        %>
+                    </tbody>
+                </table>
+            </div>
         </main>
         <!-- ===== IONICONS ===== -->
         <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
