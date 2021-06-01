@@ -147,7 +147,7 @@
                         <td><%= publicacion.getContenido()%></td>  
 
                         <td>
-                            <a href="Publicaciones.jsp?eliminar=<%= publicacion.getId()%>">
+                            <a href="Publicaciones.jsp?eliminar=<%=publicacion.getId()%>">
                                 <ion-icon name="trash-outline"></ion-icon>
                             </a>
                         </td> 
