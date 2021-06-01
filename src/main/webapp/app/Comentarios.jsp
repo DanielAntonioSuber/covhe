@@ -16,7 +16,7 @@
         response.sendRedirect("../index.jsp");
     } else {
         usuario = (Usuario) session.getAttribute("usuario");
-        
+
         String eliminar = request.getParameter("eliminar");
         if (eliminar != null && usuario.getNivel() == 1) {
             new Bajas().eliminarComentario(Integer.parseInt(eliminar));
@@ -122,33 +122,35 @@
             <h1 align="center">Administrar Foro</h1>
             <br><br>
             <table border="1" width="1000" align="center">
-                <th colspan="10" aling = "center">Lista de Publicaciones</th>
+                <caption>Lista de comentarios</caption>
+                <thead>
+                    <tr> 
+                        <th>Id</th>
+                        <th>Usuario</th>
+                        <th>Contenido</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%
+                        ArrayList<Comentario> comentarios = new Consultas().comentarios();
 
-                <tr ></tr>
-                <th>Id</th>
-                <th>Usuario</th>
-                <th>Contenido</th>
+                        for (Comentario comentario : comentarios) {
+                    %>
+                    <tr>
+                        <td><%= comentario.getId()%></td>  
+                        <td><%= comentario.getUsuario()%></td>  
+                        <td><%= comentario.getContenido()%></td>  
 
-
-                <%
-                    ArrayList<Comentario> comentarios = new Consultas().comentarios();
-
-                    for (Comentario comentario : comentarios) {
-                %>
-                <tr>
-                    <td><%= comentario.getId() %></td>  
-                    <td><%= comentario.getUsuario() %></td>  
-                    <td><%= comentario.getContenido() %></td>  
-
-                    <td>
-                        <a href="Comentarios.jsp?eliminar=<%=comentario.getId()%>">
-                            <ion-icon name="trash-outline"></ion-icon>
-                        </a>
-                    </td> 
-                </tr>
-                <%
-                    }
-                %>
+                        <td>
+                            <a href="Comentarios.jsp?eliminar=<%=comentario.getId()%>">
+                                <ion-icon name="trash-outline"></ion-icon>
+                            </a>
+                        </td> 
+                    </tr>
+                    <%
+                        }
+                    %>
+                </tbody>
             </table>
         </main>
         <!-- ===== IONICONS ===== -->
