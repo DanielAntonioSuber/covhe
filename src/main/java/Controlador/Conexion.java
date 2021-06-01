@@ -13,7 +13,7 @@ public class Conexion {
     String PORT = "3306";
     String DATABASE = "covhe";
     String URL = "jdbc:mysql://"+HOST+":"+PORT+"/"+DATABASE+"?useTimeZone=true&serverTimezone=UTC&autoReconnect=true&useSSL=false";
-    String CLASSNAME = "com.mysql.cj.jdbc";
+    String CLASSNAME = "com.mysql.cj.jdbc.Driver";
     Connection conn;
 
     public Conexion() {
